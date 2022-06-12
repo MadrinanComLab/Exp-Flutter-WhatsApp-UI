@@ -113,7 +113,16 @@ class _WhatsAppState extends State<WhatsApp> {
             height: 125.0,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-              child: ListView(
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int i)
+                  {
+                    return storyButton(imageURL[i], usernames[i]);
+                  },
+                  separatorBuilder: (BuildContext context, int index){ return SizedBox(height: 0.0); },
+                  itemCount: imageURL.length
+              ),
+              /* child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
                   // LET'S CREATE A CUSTOM WIDGET FOR OUR STORY BUTTON
@@ -126,7 +135,7 @@ class _WhatsAppState extends State<WhatsApp> {
                   storyButton(imageURL[6], "Rose"),
                   storyButton(imageURL[7], "Klay")
                 ],
-              ),
+              ), */
             ),
           ),
 
