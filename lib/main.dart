@@ -1,3 +1,4 @@
+import 'package:exp_whats_app_ui/components/chatTile.dart';
 import 'package:exp_whats_app_ui/components/storybtn.dart';
 import 'package:flutter/material.dart';
 
@@ -41,6 +42,10 @@ class _WhatsAppState extends State<WhatsApp> {
     "https://randomuser.me/api/portraits/women/0.jpg",
     "https://randomuser.me/api/portraits/women/1.jpg",
     "https://randomuser.me/api/portraits/men/0.jpg"
+  ];
+
+  List<String> usernames = [
+
   ];
 
   @override
@@ -94,10 +99,29 @@ class _WhatsAppState extends State<WhatsApp> {
                   color: Colors.white,
                   borderRadius: BorderRadius.only(topLeft: containerRadius, topRight: containerRadius),
                 ),
-                child: ListView(
-                  children: [
-                    // NOW LET'S CREATE OUR CHAT TILE CUSTOM WIDGET
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+                  child: ListView.separated(
+                      itemBuilder: (BuildContext context, int index)
+                      {
+                        return chatTile(imageURL[index], "username", "message", "date", false);
+                      },
+                      separatorBuilder: (BuildContext context, int index){ return SizedBox(height: 5.0); },
+                      itemCount: 7
+                  ),
+                  /*  child: ListView(
+                    children: [
+                      // NOW LET'S CREATE OUR CHAT TILE CUSTOM WIDGET
+                      chatTile(imageURL[3], "username", "message", "date", false),
+                      chatTile(imageURL[3], "username", "message", "date", false),
+                      chatTile(imageURL[3], "username", "message", "date", false),
+                      chatTile(imageURL[3], "username", "message", "date", false),
+                      chatTile(imageURL[3], "username", "message", "date", false),
+                      chatTile(imageURL[3], "username", "message", "date", false),
+                      chatTile(imageURL[3], "username", "message", "date", false),
+                      chatTile(imageURL[3], "username", "message", "date", false)
+                    ],
+                  ),*/
                 ),
               )
           )
