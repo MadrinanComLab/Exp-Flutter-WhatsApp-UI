@@ -1,3 +1,4 @@
+import 'package:exp_whats_app_ui/components/storybtn.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -65,13 +66,58 @@ class _WhatsAppState extends State<WhatsApp> {
         children: [
           // FIRST LET'S CREATE THE STORY TIME LINE CONTAINER
           Container(
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                // LET'S CREATE A CUSTOM WIDGET FOR OUR STORY BUTTON
-              ],
+            height: 200.0,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  // LET'S CREATE A CUSTOM WIDGET FOR OUR STORY BUTTON
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: storyButton(imageURL[0], "Jason"),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: storyButton(imageURL[1], "Chris"),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: storyButton(imageURL[2], "Mary"),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: storyButton(imageURL[3], "Steph"),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: storyButton(imageURL[4], "Melanie"),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: storyButton(imageURL[5], "Annie"),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: storyButton(imageURL[6], "Rose"),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: storyButton(imageURL[7], "Klay"),
+                  ),
+                ],
+              ),
             ),
-          )
+          ),
+
+          
         ],
       ),
     );
