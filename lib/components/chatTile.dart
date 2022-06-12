@@ -39,7 +39,7 @@ Widget chatTile(String imgUrl, String username, String message, String date, boo
 
                 Row(
                   children: [
-                    Expanded(child: Text(username)),
+                    Expanded(child: Text(message,style: TextStyle(fontSize: 15.0), )),
                     seen ? Icon(Icons.check_circle, size: 16.0, color: Colors.green,) : Icon(Icons.check_circle_outline, size: 16.0, color: Colors.grey,)
                   ],
                 ),

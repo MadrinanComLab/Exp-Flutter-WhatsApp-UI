@@ -45,7 +45,45 @@ class _WhatsAppState extends State<WhatsApp> {
   ];
 
   List<String> usernames = [
+    "Jason", "Chris", "Mary", "Steph",
+    "Melanie", "Annie", "Rose", "Klay",
+    "Julius"
+  ];
 
+  List<String> messages = [
+    "Sup!",
+    "Take care bro!",
+    "See you in the office.",
+    "Aight.",
+    "Take care ma'am",
+    "Wanna hang out?",
+    "Wanna hangout with Annie?",
+    "Bro, let's hangout with Annie and Rose",
+    "Sup Julius. Its been a while!"
+  ];
+
+  List<String> msgDate = [
+    "Now",
+    "2:35 PM",
+    "12:43 PM",
+    "09:31 AM",
+    "Yesterday",
+    "Yesterday",
+    "Wed",
+    "Wed",
+    "Tue"
+  ];
+
+  List<bool> seenMsg = [
+    true,
+    false,
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+    false
   ];
 
   @override
@@ -102,12 +140,12 @@ class _WhatsAppState extends State<WhatsApp> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
                   child: ListView.separated(
-                      itemBuilder: (BuildContext context, int index)
+                      itemBuilder: (BuildContext context, int i)
                       {
-                        return chatTile(imageURL[index], "username", "message", "date", false);
+                        return chatTile(imageURL[i], usernames[i], messages[i], msgDate[i], seenMsg[i]);
                       },
                       separatorBuilder: (BuildContext context, int index){ return SizedBox(height: 5.0); },
-                      itemCount: 7
+                      itemCount: imageURL.length
                   ),
                   /*  child: ListView(
                     children: [
