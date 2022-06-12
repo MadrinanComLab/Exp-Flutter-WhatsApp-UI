@@ -28,6 +28,7 @@ class WhatsApp extends StatefulWidget {
 class _WhatsAppState extends State<WhatsApp> {
   // ADDING THE MAIN COLOR OF THE APP
   Color mainColor = new Color(0xFF177767);
+  var containerRadius = Radius.circular(30.0);
 
   // ADDING A LIST OF IMAGE URL TO SIMULATE THE AVATAR PICTURE
   List<String> imageURL = [
@@ -66,58 +67,40 @@ class _WhatsAppState extends State<WhatsApp> {
         children: [
           // FIRST LET'S CREATE THE STORY TIME LINE CONTAINER
           Container(
-            height: 200.0,
+            height: 125.0,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
                   // LET'S CREATE A CUSTOM WIDGET FOR OUR STORY BUTTON
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: storyButton(imageURL[0], "Jason"),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: storyButton(imageURL[1], "Chris"),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: storyButton(imageURL[2], "Mary"),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: storyButton(imageURL[3], "Steph"),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: storyButton(imageURL[4], "Melanie"),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: storyButton(imageURL[5], "Annie"),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: storyButton(imageURL[6], "Rose"),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: storyButton(imageURL[7], "Klay"),
-                  ),
+                  storyButton(imageURL[0], "Jason"),
+                  storyButton(imageURL[1], "Chris"),
+                  storyButton(imageURL[2], "Mary"),
+                  storyButton(imageURL[3], "Steph"),
+                  storyButton(imageURL[4], "Melanie"),
+                  storyButton(imageURL[5], "Annie"),
+                  storyButton(imageURL[6], "Rose"),
+                  storyButton(imageURL[7], "Klay")
                 ],
               ),
             ),
           ),
 
-          
+          // NOW LET'S CREATE CHAT TIMELINE
+          Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(topLeft: containerRadius, topRight: containerRadius),
+                ),
+                child: ListView(
+                  children: [
+                    // NOW LET'S CREATE OUR CHAT TILE CUSTOM WIDGET
+                  ],
+                ),
+              )
+          )
         ],
       ),
     );
