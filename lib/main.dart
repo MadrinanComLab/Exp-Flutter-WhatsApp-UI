@@ -122,20 +122,6 @@ class _WhatsAppState extends State<WhatsApp> {
                   separatorBuilder: (BuildContext context, int index){ return SizedBox(height: 0.0); },
                   itemCount: imageURL.length
               ),
-              /* child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  // LET'S CREATE A CUSTOM WIDGET FOR OUR STORY BUTTON
-                  storyButton(imageURL[0], "Jason"),
-                  storyButton(imageURL[1], "Chris"),
-                  storyButton(imageURL[2], "Mary"),
-                  storyButton(imageURL[3], "Steph"),
-                  storyButton(imageURL[4], "Melanie"),
-                  storyButton(imageURL[5], "Annie"),
-                  storyButton(imageURL[6], "Rose"),
-                  storyButton(imageURL[7], "Klay")
-                ],
-              ), */
             ),
           ),
 
@@ -156,19 +142,6 @@ class _WhatsAppState extends State<WhatsApp> {
                       separatorBuilder: (BuildContext context, int index){ return SizedBox(height: 5.0); },
                       itemCount: imageURL.length
                   ),
-                  /*  child: ListView(
-                    children: [
-                      // NOW LET'S CREATE OUR CHAT TILE CUSTOM WIDGET
-                      chatTile(imageURL[3], "username", "message", "date", false),
-                      chatTile(imageURL[3], "username", "message", "date", false),
-                      chatTile(imageURL[3], "username", "message", "date", false),
-                      chatTile(imageURL[3], "username", "message", "date", false),
-                      chatTile(imageURL[3], "username", "message", "date", false),
-                      chatTile(imageURL[3], "username", "message", "date", false),
-                      chatTile(imageURL[3], "username", "message", "date", false),
-                      chatTile(imageURL[3], "username", "message", "date", false)
-                    ],
-                  ),*/
                 ),
               )
           )
